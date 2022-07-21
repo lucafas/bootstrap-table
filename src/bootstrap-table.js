@@ -2174,9 +2174,9 @@ class BootstrapTable {
           i === trLength - 1 && this.options.detailViewAlign === 'right'
         ) {
           const $thDetail = $ths.filter('.detail')
-          const zoomWidth = $thDetail.innerWidth() - $thDetail.find('.fht-cell').width()
+          const zoomWidth = $thDetail[0].getBoundingClientRect().width - $thDetail.find('.fht-cell').width()
 
-          $thDetail.find('.fht-cell').width($this.innerWidth() - zoomWidth)
+          $thDetail.find('.fht-cell').width($this[0].getBoundingClientRect().width - zoomWidth)
           return
         }
       }
@@ -2188,9 +2188,9 @@ class BootstrapTable {
         $th = $($ths[$this[0].cellIndex])
       }
 
-      const zoomWidth = $th.innerWidth() - $th.find('.fht-cell').width()
+      const zoomWidth = $th[0].getBoundingClientRect().width - $th.find('.fht-cell').width()
 
-      $th.find('.fht-cell').width($this.innerWidth() - zoomWidth)
+      $th.find('.fht-cell').width($this[0].getBoundingClientRect().width - zoomWidth)
     })
 
     this.horizontalScroll()
@@ -2328,17 +2328,17 @@ class BootstrapTable {
           i === trLength - 1 && this.options.detailViewAlign === 'right'
         ) {
           const $thDetail = $ths.filter('.detail')
-          const zoomWidth = $thDetail.innerWidth() - $thDetail.find('.fht-cell').width()
+          const zoomWidth = $thDetail[0].getBoundingClientRect().width - $thDetail.find('.fht-cell').width()
 
-          $thDetail.find('.fht-cell').width($this.innerWidth() - zoomWidth)
+          $thDetail.find('.fht-cell').width($this[0].getBoundingClientRect().width - zoomWidth)
           return
         }
       }
 
       const $th = $ths.eq(i)
-      const zoomWidth = $th.innerWidth() - $th.find('.fht-cell').width()
+      const zoomWidth = $th[0].getBoundingClientRect().width - $th.find('.fht-cell').width()
 
-      $th.find('.fht-cell').width($this.innerWidth() - zoomWidth)
+      $th.find('.fht-cell').width($this[0].getBoundingClientRect().width - zoomWidth)
     })
 
     this.horizontalScroll()
